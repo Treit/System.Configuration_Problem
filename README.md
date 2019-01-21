@@ -3,7 +3,7 @@
 ## Problem Overview
 This repo contains a trivial HelloWorld project that illustrates a problem with consuming .NET Standard libraries from a .NET 4.7.2 project, related to reading configuration files.
 
-The specific issue arises if the configuration file used by the .NET 4.7.2 project contains certain configuration sections, which are valid for full .NET 4.7.2 applications but are unrecognized by the System.Configuration.ConfigurationManager package utilized by .NET Standard applications.
+The specific issue arises if the configuration file used by the .NET 4.7.2 project contains certain configuration sections, which are valid for full .NET 4.7.2 applications but are unrecognized by the System.Configuration.ConfigurationManager package utilized by .NET Standard libraries.
 
 In the example application, the HelloWorld project's app.config has a system.serviceModel section that causes the configuration system to fail to load at runtime, because the project also has a dependency on a trivial .NET Standard 2.0 class library that attempts to read configuration values.
 
